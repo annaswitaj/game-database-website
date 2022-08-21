@@ -4,8 +4,8 @@
       <mat-select
         panelClass="sort-select"
         [(ngModel)]="sort"
+        (selectionChange)="searchGames(sort)"
         >
-        <!-- (selectionChange)="searchGames(sort)" -->
         <mat-option value="name">Name</mat-option>
         <mat-option value="-released">Released</mat-option>
         <mat-option value="-added">Added</mat-option>
@@ -17,9 +17,9 @@
     </mat-form-field>
   </div>
 
-  <!-- <div class="games">  
+  <div class="games">  
     <ng-container *ngFor="let game of games">
-      <div class="game"  (click)="openGameDetails(game.id)">
+      <div class="game" (click)="openGameDetails(game.id)" >
          
         <div class="game-thumb-container">
           <img
@@ -43,27 +43,5 @@
         </div>
       </div>
     </ng-container> 
-  </div> -->
-
-  <div class="games">  
-      <div class="game"  >
-
-        <div class="game-thumb-container">
-          <img
-            src=""
-            alt="thumbnail"
-            class="game-thumbnail"
-          />
-        </div>
-        <div class="game-description">
-          <p class="game-name">Name</p>
-          <div class="game-platforms">
-            <img       
-              class="game-platform"
-              src=""
-              alt="slug"
-            />
-          </div>
-        </div>
-      </div>
   </div>
+
